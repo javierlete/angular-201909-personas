@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+            <th>{{persona.id}}</th>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.email}}</td>
+            <td><a href="#">Editar</a><a href="#">Borrar</a></td>
+        </tr>
+    </tbody>
+</table>

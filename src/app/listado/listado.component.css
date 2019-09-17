@@ -1,0 +1,21 @@
+table {
+    border: 1px solid black;
+}
+
+thead {
+    background: black;
+    font-weight: bold;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 2px;
+    margin: 2px;
+    color: black;
+}
+
+a:hover {
+
+}
