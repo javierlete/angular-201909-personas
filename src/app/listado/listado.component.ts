@@ -15,6 +15,18 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit() {
     this.personaService.getPersonas().subscribe(
-      personas => this.personas = personas);
+      personasRecibidas => this.personas = personasRecibidas);
+
+    // CON FUNCIÓN ANÓNIMA
+    // this.personaService.getPersonas().subscribe(function (personasRecibidas: Personas[]){
+    //   return this.personas = personasRecibidas;
+    // });
+
+    // CON FUNCIÓN TRADICIONAL
+    // this.personaService.getPersonas().subscribe(this.recibirPersonas() );
+
+    // recibirPersonas(personasRecibidas: Personas[]){
+    //   return this.personas = personasRecibidas;
+    // }
   }
 }
