@@ -31,7 +31,7 @@ export class ListadoComponent implements OnInit {
     // }
   }
 
-  onEditar(id: number): void {
-    this.persona = this.personas.find(persona => persona.id === id);
+  onEditar(persona: Persona): void {
+    this.persona = persona;
   }
 }
