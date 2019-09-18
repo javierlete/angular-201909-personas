@@ -10,6 +10,7 @@ import { PersonaService } from '../persona.service';
 export class ListadoComponent implements OnInit {
 
   personas: Persona[];
+  persona: Persona;
 
   constructor(private personaService: PersonaService) { }
 
@@ -28,5 +29,9 @@ export class ListadoComponent implements OnInit {
     // recibirPersonas(personasRecibidas: Personas[]){
     //   return this.personas = personasRecibidas;
     // }
+  }
+
+  onEditar(id: number): void {
+    this.persona = this.personas.find(persona => persona.id === id);
   }
 }
