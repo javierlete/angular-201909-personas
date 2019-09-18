@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Persona } from '../persona';
+import { PersonaService } from '../persona.service';
 
 @Component({
   selector: 'app-detalle',
@@ -8,12 +10,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetalleComponent implements OnInit {
 
-  id: number;
+  persona: Persona = {
+    id: 0,
+    nombre: '',
+    email: ''
+  };
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private personaService: PersonaService) {
+  }
 
   ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
+    const id: number = +this.route.snapshot.paramMap.get('id');
+
+    if (id !== 0) {
+      this.personaService.getPersona(id).subscribe(persona => this.persona = persona);
+    }
   }
 
 }
