@@ -1,0 +1,14 @@
+{
+  "personas": [
+    {
+      "id": 2,
+      "nombre": "modificado",
+      "email": "javierlete"
+    },
+    {
+      "nombre": "Nuevo",
+      "email": "suemail",
+      "id": 3
+    }
+  ]
+}
