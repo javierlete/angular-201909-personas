@@ -27,4 +27,12 @@ export class DetalleComponent implements OnInit {
     }
   }
 
+  onGuardar() {
+    if (this.persona.id === 0) {
+      this.personaService.postPersona(this.persona).subscribe(persona => this.persona = persona);
+    } else {
+      this.personaService.putPersona(this.persona).subscribe(persona => this.persona = persona);
+    }
+  }
+
 }

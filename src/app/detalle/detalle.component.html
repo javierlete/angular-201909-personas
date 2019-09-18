@@ -1,1 +1,19 @@
 <p>Visualizando la persona: {{persona.id}}, {{persona.nombre}}, {{persona.email}}</p>
+
+<form>
+    <div>
+        <label for="id">Id</label>
+        <input id="id" value="{{persona.id}}" name="id" readonly />
+    </div>
+    <div>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" [(ngModel)]="persona.nombre" name="nombre" />
+    </div>
+    <div>
+        <label for="email">Nombre</label>
+        <input id="email" [(ngModel)]="persona.email" name="email" />
+    </div>
+    <div>
+        <button (click)="onGuardar()">Guardar</button>
+    </div>
+</form>

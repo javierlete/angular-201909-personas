@@ -11,7 +11,7 @@ export class PersonaService {
 
   private url = 'http://localhost:3000/personas/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   personas: Persona[];
 
@@ -21,5 +21,13 @@ export class PersonaService {
 
   getPersona(id: number): Observable<Persona> {
     return this.http.get<Persona>(this.url + id);
+  }
+
+  postPersona(persona: Persona): Observable<Persona> {
+    return this.http.post<Persona>(this.url, persona);
+  }
+
+  putPersona(persona: Persona): Observable<Persona> {
+    return this.http.put<Persona>(this.url + persona.id, persona);
   }
 }
