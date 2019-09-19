@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetalleComponent } from './detalle/detalle.component';
 
 import { FormsModule } from '@angular/forms';
+import { TituloComponent } from './titulo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
-    DetalleComponent
+    DetalleComponent,
+    TituloComponent
   ],
   imports: [
     BrowserModule,
