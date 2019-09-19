@@ -1,0 +1,9 @@
+{
+  "personas": [
+    {
+      "id": 2,
+      "nombre": "Javier",
+      "email": "javier@miemail.net"
+    }
+  ]
+}
