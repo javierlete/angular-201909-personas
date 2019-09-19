@@ -17,5 +17,6 @@ a {
 }
 
 a:hover {
-
+    cursor: pointer;
+    background: lightgray;
 }

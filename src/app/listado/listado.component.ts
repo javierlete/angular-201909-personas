@@ -10,13 +10,12 @@ import { PersonaService } from '../persona.service';
 export class ListadoComponent implements OnInit {
 
   personas: Persona[];
-  persona: Persona;
+  // persona: Persona;
 
   constructor(private personaService: PersonaService) { }
 
   ngOnInit() {
-    this.personaService.getPersonas().subscribe(
-      personasRecibidas => this.personas = personasRecibidas);
+    this.cargarPersonas();
 
     // CON FUNCIÓN ANÓNIMA
     // this.personaService.getPersonas().subscribe(function (personasRecibidas: Personas[]){
@@ -31,7 +30,19 @@ export class ListadoComponent implements OnInit {
     // }
   }
 
-  onEditar(persona: Persona): void {
-    this.persona = persona;
+  private cargarPersonas() {
+    this.personaService.getPersonas().subscribe(personasRecibidas => this.personas = personasRecibidas);
+  }
+
+  // onEditar(persona: Persona): void {
+  //   this.persona = persona;
+  // }
+
+  onBorrar(id: number): void {
+    if (confirm(`¿Estás seguro que quieres borrar el elemento id = ${id}?`)) {
+      this.personaService.deletePersona(id).subscribe(
+        () => this.cargarPersonas()
+      );
+    }
   }
 }

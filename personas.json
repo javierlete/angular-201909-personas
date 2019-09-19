@@ -2,23 +2,8 @@
   "personas": [
     {
       "id": 2,
-      "nombre": "modificado",
-      "email": "javierlete"
-    },
-    {
-      "nombre": "Nuevosdfhdfgh",
-      "email": "suemaildfghdf",
-      "id": 3
-    },
-    {
-      "id": 4,
-      "nombre": "sdfgsdf",
-      "email": "dfgjhfghjfghj"
-    },
-    {
-      "id": 5,
-      "nombre": "asdfsdfgsdfg",
-      "email": "sdfgsdfgsdf"
+      "nombre": "Javier",
+      "email": "javier@miemail.net"
     }
   ]
 }
