@@ -22,19 +22,27 @@ export class PersonaService {
   }
 
   getPersona(id: number): Observable<Persona> {
-    return this.http.get<Persona>(this.url + id);
+    return this.http.get<Persona>(this.url + id).pipe(
+      catchError(this.gestionarError<Persona>('Obtener persona por id', new Persona()))
+    );
   }
 
   postPersona(persona: Persona): Observable<Persona> {
-    return this.http.post<Persona>(this.url, persona);
+    return this.http.post<Persona>(this.url, persona).pipe(
+      catchError(this.gestionarError<Persona>('Alta de persona', persona))
+    );
   }
 
   putPersona(persona: Persona): Observable<Persona> {
-    return this.http.put<Persona>(this.url + persona.id, persona);
+    return this.http.put<Persona>(this.url + persona.id, persona).pipe(
+      catchError(this.gestionarError<Persona>('Modificación de persona', persona))
+    );
   }
 
   deletePersona(id: number): Observable<Persona> {
-    return this.http.delete<Persona>(this.url + id);
+    return this.http.delete<Persona>(this.url + id).pipe(
+      catchError(this.gestionarError<Persona>('Borrado de persona', new Persona()))
+    );
   }
 
   private gestionarError<T>(operation = 'operation', result?: T) {
