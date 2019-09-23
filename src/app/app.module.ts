@@ -11,18 +11,23 @@ import { DetalleComponent } from './detalle/detalle.component';
 import { FormsModule } from '@angular/forms';
 import { TituloComponent } from './titulo.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { PruebaModalNgbootstrapComponent } from './prueba-modal-ngbootstrap/prueba-modal-ngbootstrap.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
     DetalleComponent,
-    TituloComponent
+    TituloComponent,
+    PruebaModalNgbootstrapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
