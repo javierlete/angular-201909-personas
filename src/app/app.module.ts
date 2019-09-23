@@ -14,6 +14,9 @@ import { TituloComponent } from './titulo.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { PruebaModalNgbootstrapComponent } from './prueba-modal-ngbootstrap/prueba-modal-ngbootstrap.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,9 @@ import { PruebaModalNgbootstrapComponent } from './prueba-modal-ngbootstrap/prue
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

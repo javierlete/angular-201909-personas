@@ -4,6 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { Persona } from './persona';
 
 import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class PersonaService {
 
   private url = 'http://localhost:3000/personas/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
   getPersonas(): Observable<Persona[]> {
     return this.http.get<Persona[]>(this.url).pipe(
@@ -41,7 +42,7 @@ export class PersonaService {
 
       console.error(operation, error);
 
-      alert(operation + ' ha fallado');
+      this.snackBar.open(operation + ' ha fallado', 'Cerrar');
 
       return of(result as T);
     };
