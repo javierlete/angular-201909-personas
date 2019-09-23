@@ -9,6 +9,7 @@ import { PersonaService } from '../persona.service';
 })
 export class ListadoComponent implements OnInit {
 
+  displayedColumns: string[] = [ 'id', 'nombre', 'email', 'opciones'];
   personas: Persona[];
   // persona: Persona;
 

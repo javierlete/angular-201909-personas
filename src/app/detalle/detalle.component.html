@@ -1,19 +1,19 @@
 <p>Visualizando la persona: {{persona.id}}, {{persona.nombre}}, {{persona.email}}</p>
 
 <form>
-    <div>
+    <mat-form-field>
         <label for="id">Id</label>
-        <input id="id" value="{{persona.id}}" name="id" readonly />
-    </div>
-    <div>
+        <input matInput id="id" value="{{persona.id}}" name="id" readonly />
+    </mat-form-field>
+    <mat-form-field>
         <label for="nombre">Nombre</label>
-        <input id="nombre" [(ngModel)]="persona.nombre" name="nombre" />
-    </div>
-    <div>
+        <input matInput id="nombre" [(ngModel)]="persona.nombre" name="nombre" />
+    </mat-form-field>
+    <mat-form-field>
         <label for="email">Nombre</label>
-        <input id="email" [(ngModel)]="persona.email" name="email" />
-    </div>
+        <input matInput id="email" [(ngModel)]="persona.email" name="email" />
+    </mat-form-field>
     <div>
-        <button (click)="onGuardar()">Guardar</button>
+        <button mat-button (click)="onGuardar()">Guardar</button>
     </div>
 </form>
