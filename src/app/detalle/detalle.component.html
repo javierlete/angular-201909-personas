@@ -1,19 +1,23 @@
-<p>Visualizando la persona: {{persona.id}}, {{persona.nombre}}, {{persona.email}}</p>
-
-<form>
+<form [formGroup]="personaForm" (ngSubmit)="onGuardar()">
     <mat-form-field>
-        <label for="id">Id</label>
-        <input matInput id="id" value="{{persona.id}}" name="id" readonly />
+        <input matInput formControlName="nombre" placeholder="Nombre" required />
+        <mat-error *ngIf="personaForm.get('nombre').hasError('required')">
+            El nombre debe de rellenarse
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
-        <label for="nombre">Nombre</label>
-        <input matInput id="nombre" [(ngModel)]="persona.nombre" name="nombre" />
-    </mat-form-field>
-    <mat-form-field>
-        <label for="email">Email</label>
-        <input matInput id="email" [(ngModel)]="persona.email" name="email" />
+        <input type="email" matInput formControlName="email" placeholder="Email" required />
+        <mat-error *ngIf="personaForm.get('email').hasError('required')">
+            El email debe de rellenarse
+        </mat-error>
+        <mat-error *ngIf="personaForm.get('email').hasError('email')">
+            El email debe usar arroba y punto en su formato
+        </mat-error>
     </mat-form-field>
     <div>
-        <button mat-button (click)="onGuardar()">Guardar</button>
+        <button mat-button [disabled]="!personaForm.valid">Guardar</button>
+    </div>
+    <div>
+        <button type="button" mat-button (click)="onCancelar()">Cancelar</button>
     </div>
 </form>

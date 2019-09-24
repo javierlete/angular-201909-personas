@@ -8,11 +8,8 @@ import { ListadoComponent } from './listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetalleComponent } from './detalle/detalle.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TituloComponent } from './titulo.component';
-
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { PruebaModalNgbootstrapComponent } from './prueba-modal-ngbootstrap/prueba-modal-ngbootstrap.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -27,15 +24,14 @@ import {MatInputModule} from '@angular/material/input';
     ListadoComponent,
     DetalleComponent,
     TituloComponent,
-    PruebaModalNgbootstrapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MatSnackBarModule,
     MatToolbarModule,
     MatTableModule,
