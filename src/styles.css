@@ -4,4 +4,9 @@
 
 .mat-toolbar {
     font-variant: small-caps;
+    white-space: normal !important;
+}
+
+mat-form-field {
+    width: 100%;
 }
